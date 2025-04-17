@@ -57,14 +57,14 @@ public class Main {
 					System.out.println("\nDaftar Mahasiswa:");
 						for (Mahasiswa mhs : daftarMahasiswa) {
 						System.out.println("NIM: " + mhs.nim + " | Nama: " + mhs.nama + " | Prodi: " + mhs.prodi);
-					}
+						}
 					System.out.println();
 					break;
 				case 2:
 					System.out.println("\nDaftar Mata Kuliah:");
 						for (MataKuliah mk : daftarMataKuliah) {
 						System.out.println("Kode MK: " + mk.kodeMK + " | Nama: " + mk.namaMK + " | SKS: " + mk.sks);
-					}
+						}
 					System.out.println();
 					break;
 				case 5:
