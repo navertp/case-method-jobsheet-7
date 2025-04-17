@@ -28,6 +28,24 @@ public class Main {
 		return input.nextInt();
 	}
 
+	public static void sorting(Penilaian[] data) {
+		for (int i = 0; i < data.length - 1; i++) {
+			for (int j = 1; j < data.length - i; j++) {
+				data[j-1].hitungNilaiAkhir();
+				data[j].hitungNilaiAkhir();
+				if (data[j-1].nilaiAkhir < data[j].nilaiAkhir) {
+					Penilaian temp = data[j];
+					data[j] = data[j-1];
+					data[j-1] = temp;
+				}
+			}
+		}
+		for (Penilaian penilaian : data) {
+			penilaian.hitungNilaiAkhir();
+			System.out.println(penilaian.mahasiswa.nama + " | " + penilaian.mataKuliah.namaMK + " | " + penilaian.nilaiAkhir);
+		}
+	}
+
 	public static void main(String[] args) {
 		Mahasiswa[] daftarMahasiswa = new Mahasiswa[3];
 		daftarMahasiswa[0] = new Mahasiswa("22001", "Ali Rahman", "Informatika");
@@ -65,6 +83,19 @@ public class Main {
 						for (MataKuliah mk : daftarMataKuliah) {
 						System.out.println("Kode MK: " + mk.kodeMK + " | Nama: " + mk.namaMK + " | SKS: " + mk.sks);
 						}
+					System.out.println();
+					break;
+				case 3:
+					System.out.println("\nData Penilaian");
+					for (Penilaian penilaian : daftarPenilaian) {
+						penilaian.hitungNilaiAkhir();
+						System.out.println(penilaian.mahasiswa.nama + " | " + penilaian.mataKuliah.namaMK + " | " + penilaian.nilaiAkhir);
+					}
+					System.out.println();
+					break;
+				case 4:
+					System.out.println("\nData Penilaian");
+					sorting(daftarPenilaian);
 					System.out.println();
 					break;
 				case 5:
