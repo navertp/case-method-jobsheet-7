@@ -4,6 +4,18 @@ public class Main {
 
 	public static Scanner input = new Scanner(System.in);
 
+	public static void searchBerdasarkanNim(Mahasiswa[] daftarMahasiswa, String nim) {
+		for (int i = 0; i < daftarMahasiswa.length; i++) {
+			if (daftarMahasiswa[i].nim.equals(nim)) {
+				System.out.println("Mahasiswa Ditemukan: NIM: " + daftarMahasiswa[i].nim + " | Nama: " + daftarMahasiswa[i].nama + " | Prodi: " + daftarMahasiswa[i].prodi);
+				break;
+			}
+			if (i == daftarMahasiswa.length - 1) {
+				System.err.println("Mahasiswa dengan NIM " + nim + " tidak ditemukan");
+			}
+		}
+	}
+
 	public static int menu() {
 		System.out.println("=== MENU SISTEM AKADEMIK ===");
 		System.out.println("1. Tampilkan Daftar Mahasiswa");
@@ -43,6 +55,11 @@ public class Main {
 					break;
 				case 1:
 					System.out.println("Daftar Mahasiswa:");
+					break;
+				case 5:
+					System.out.print("Masukkan NIM mahasiswa yang dicari: ");
+					String nim = input.next();
+					searchBerdasarkanNim(daftarMahasiswa, nim);
 					break;
 				default:
 					System.err.println("Menu Tidak Tersedia");
