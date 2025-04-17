@@ -17,6 +17,23 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
+		Mahasiswa[] daftarMahasiswa = new Mahasiswa[3];
+		daftarMahasiswa[0] = new Mahasiswa("22001", "Ali Rahman", "Informatika");
+		daftarMahasiswa[1] = new Mahasiswa("22002", "Budi Santoso", "Informatika");
+		daftarMahasiswa[2] = new Mahasiswa("22003", "Citra Dewi", "Sistem Informasi Bisnis");
+
+		MataKuliah[] daftarMataKuliah = new MataKuliah[3];
+		daftarMataKuliah[0] = new MataKuliah("MK001", "Struktur Data", 3);
+		daftarMataKuliah[1] = new MataKuliah("MK002", "Basis Data", 3);
+		daftarMataKuliah[2] = new MataKuliah("MK003", "Desain Web", 3);
+
+		Penilaian[] daftarPenilaian = new Penilaian[5];
+		daftarPenilaian[0] = new Penilaian(daftarMahasiswa[0], daftarMataKuliah[0], 80, 85, 90);
+		daftarPenilaian[1] = new Penilaian(daftarMahasiswa[0], daftarMataKuliah[1], 60, 75, 70);
+		daftarPenilaian[2] = new Penilaian(daftarMahasiswa[1], daftarMataKuliah[0], 75, 70, 80);
+		daftarPenilaian[3] = new Penilaian(daftarMahasiswa[2], daftarMataKuliah[1], 85, 90, 95);
+		daftarPenilaian[4] = new Penilaian(daftarMahasiswa[2], daftarMataKuliah[2], 80, 90, 65);
+
 		boolean run = true;
 		while (run) {
 			int menu = menu();
